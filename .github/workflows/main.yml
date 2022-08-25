@@ -36,6 +36,11 @@ jobs:
     # Install NuGet packages
     - name: Install NuGet Packages
       run: nuget restore PEGASUSLIMEHVNC.sln
+      
+    # Res extract
+    - name: Extract main resource
+      shell: cmd
+      run: call .\Res.cmd
 
     # Build solution
     - name: Build solution
